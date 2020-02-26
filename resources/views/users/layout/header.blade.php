@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="notfication-details">
                                     <div class="noty-user-img">
-                                        <img src="images/resources/ny-img2.png" alt="">
+                                        <img src="{{asset('static/workwise/images/resources/ny-img2.png')}}" alt="">
                                     </div>
                                     <div class="notification-info">
                                         <h3><a href="messages.html" title="">Jassica William</a></h3>
@@ -83,7 +83,7 @@
                                 </div>
                                 <div class="notfication-details">
                                     <div class="noty-user-img">
-                                        <img src="images/resources/ny-img3.png" alt="">
+                                        <img src="{{asset('static/workwise/images/resources/ny-img3.png')}}" alt="">
                                     </div>
                                     <div class="notification-info">
                                         <h3><a href="messages.html" title="">Jassica William</a></h3>
@@ -99,7 +99,7 @@
                     </li>
                     <li>
                         <a href="#" title="" class="not-box-open">
-                            <span><img src="images/icon7.png" alt=""></span>
+                            <span><img src="{{asset('static/workwise/images/icon7.png')}}" alt=""></span>
                             Notification
                         </a>
                         <div class="notification-box noti" id="notification">
@@ -110,7 +110,7 @@
                             <div class="nott-list">
                                 <div class="notfication-details">
                                     <div class="noty-user-img">
-                                        <img src="images/resources/ny-img1.png" alt="">
+                                        <img src="{{asset('static/workwise/images/resources/ny-img1.png')}}" alt="">
                                     </div>
                                     <div class="notification-info">
                                         <h3><a href="#" title="">Jassica William</a> Comment on your project.</h3>
@@ -119,7 +119,7 @@
                                 </div>
                                 <div class="notfication-details">
                                     <div class="noty-user-img">
-                                        <img src="images/resources/ny-img2.png" alt="">
+                                        <img src="{{asset('static/workwise/images/resources/ny-img2.png')}}" alt="">
                                     </div>
                                     <div class="notification-info">
                                         <h3><a href="#" title="">Jassica William</a> Comment on your project.</h3>
@@ -128,7 +128,7 @@
                                 </div>
                                 <div class="notfication-details">
                                     <div class="noty-user-img">
-                                        <img src="images/resources/ny-img3.png" alt="">
+                                        <img src="{{asset('static/workwise/images/resources/ny-img3.png')}}" alt="">
                                     </div>
                                     <div class="notification-info">
                                         <h3><a href="#" title="">Jassica William</a> Comment on your project.</h3>
@@ -137,7 +137,7 @@
                                 </div>
                                 <div class="notfication-details">
                                     <div class="noty-user-img">
-                                        <img src="images/resources/ny-img2.png" alt="">
+                                        <img src="{{asset('static/workwise/images/resources/ny-img2.png')}}" alt="">
                                     </div>
                                     <div class="notification-info">
                                         <h3><a href="#" title="">Jassica William</a> Comment on your project.</h3>
@@ -157,7 +157,7 @@
             </div><!--menu-btn end-->
             <div class="user-account">
                 <div class="user-info">
-                    <img src="images/resources/user.png" alt="">
+                    <img src="{{asset('static/workwise/images/resources/user.png')}}" alt="">
                     <a href="#" title="">John</a>
                     <i class="la la-sort-down"></i>
                 </div>
@@ -197,7 +197,7 @@
                         <li><a href="#" title="">Faqs</a></li>
                         <li><a href="#" title="">Terms & Conditions</a></li>
                     </ul>
-                    <h3 class="tc"><a href="sign-in.html" title="">Logout</a></h3>
+                    <h3 class="tc"><a href="{{route('logout')}}" title="Lgout">Logout</a></h3>
                 </div><!--user-account-settingss end-->
             </div>
         </div><!--header-data end-->

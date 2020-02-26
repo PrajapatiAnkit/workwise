@@ -11,12 +11,16 @@
     <link rel="stylesheet" type="text/css" href="{{asset('static/workwise/css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('static/workwise/css/line-awesome.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('static/workwise/css/line-awesome-font-awesome.min.css')}}">
-    <link href="{{asset('static/workwise/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{asset('static/workwise/vendor/fontawesome-free/css/all.min.css')}}"  type="text/css">
     <link rel="stylesheet" type="text/css" href="{{asset('static/workwise/css/font-awesome.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('static/workwise/lib/slick/slick.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('static/workwise/lib/slick/slick-theme.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('static/workwise/css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('static/workwise/css/responsive.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/custom-style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/busy.css')}}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 
 
@@ -87,54 +91,64 @@
                                 </div><!--login-resources end-->
                             </div><!--sign_in_sec end-->
                             <div class="sign_in_sec" id="tab-2">
-                                <div class="signup-tab">
+                                    <h3>Sign Up</h3>
+                                {{--  <div class="signup-tab">
                                     <i class="fa fa-long-arrow-left"></i>
                                     <h2>johndoe@example.com</h2>
                                     <ul>
                                         <li data-tab="tab-3" class="current"><a href="#" title="">User</a></li>
                                         <li data-tab="tab-4"><a href="#" title="">Company</a></li>
                                     </ul>
-                                </div><!--signup-tab end-->
+                                </div><!--signup-tab end-->  --}}
+
                                 <div class="dff-tab current" id="tab-3">
-                                    <form>
+                                    <div class="alert alert-danger2" id="errorMessages" style="display: none"></div>
+                                    <form id="signupForm">
+                                        @csrf
                                         <div class="row">
                                             <div class="col-lg-12 no-pdd">
                                                 <div class="sn-field">
-                                                    <input type="text" name="name" placeholder="Full Name">
+                                                    <input type="text" name="name" id="name" placeholder="Full Name">
                                                     <i class="la la-user"></i>
+                                                    <div class="empty-field" id="nameError">nameError</div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 no-pdd">
                                                 <div class="sn-field">
-                                                    <input type="text" name="country" placeholder="Country">
-                                                    <i class="la la-globe"></i>
+                                                    <input type="text" name="email" id="email" placeholder="Email">
+                                                    <i class="la la-user"></i>
+                                                    <div class="empty-field" id="emailError">emailError</div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 no-pdd">
                                                 <div class="sn-field">
-                                                    <select>
-                                                        <option>Category</option>
-                                                        <option>Category 1</option>
-                                                        <option>Category 2</option>
-                                                        <option>Category 3</option>
-                                                        <option>Category 4</option>
-                                                    </select>
-                                                    <i class="la la-dropbox"></i>
-                                                    <span><i class="fa fa-ellipsis-h"></i></span>
+                                                    <input type="text" name="contact" id="contact" maxlength="10" placeholder="Contact">
+                                                    <i class="la la-user"></i>
+                                                    <div class="empty-field" id="contactError">contactError</div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 no-pdd">
                                                 <div class="sn-field">
-                                                    <input type="password" name="password" placeholder="Password">
+                                                    <input type="text" name="username" id="username" placeholder="Username">
+                                                    <i class="la la-user"></i>
+                                                    <div class="empty-field" id="usernameError">usernameError</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 no-pdd">
+                                                <div class="sn-field">
+                                                    <input type="password" name="password" id="password" placeholder="Password">
                                                     <i class="la la-lock"></i>
+                                                    <div class="empty-field" id="passwordError">passwordError</div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 no-pdd">
                                                 <div class="sn-field">
-                                                    <input type="password" name="repeat-password" placeholder="Repeat Password">
+                                                    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password">
                                                     <i class="la la-lock"></i>
+                                                    <div class="empty-field" id="confirmPasswordError">confirmPasswordError</div>
                                                 </div>
                                             </div>
+
                                             <div class="col-lg-12 no-pdd">
                                                 <div class="checky-sec st2">
                                                     <div class="fgt-sec">
@@ -157,19 +171,19 @@
                                         <div class="row">
                                             <div class="col-lg-12 no-pdd">
                                                 <div class="sn-field">
-                                                    <input type="text" name="company-name" placeholder="Company Name">
+                                                    <input type="text" name="company-namess" placeholder="Company Name">
                                                     <i class="la la-building"></i>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 no-pdd">
                                                 <div class="sn-field">
-                                                    <input type="text" name="country" placeholder="Country">
+                                                    <input type="text" name="countryss" placeholder="Country">
                                                     <i class="la la-globe"></i>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 no-pdd">
                                                 <div class="sn-field">
-                                                    <input type="password" name="password" placeholder="Password">
+                                                    <input type="password" name="passwordsss" placeholder="Password">
                                                     <i class="la la-lock"></i>
                                                 </div>
                                             </div>
@@ -202,6 +216,12 @@
                 </div>
             </div><!--signin-pop end-->
         </div><!--signin-popup end-->
+
+        <div class="modal-busy" id="loader" style="display: none">
+            <div class="center-busy">
+                <img src="{{asset('assets/images/loader/loader-icon.gif')}}">
+            </div>
+        </div>
         <div class="footy-sec">
             <div class="container">
                 <ul>
@@ -225,6 +245,8 @@
 
 
 
+<script type="text/javascript" src="{{asset('static/workwise/js/jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/login-signup-script.js')}}"></script>
 <script type="text/javascript" src="{{asset('static/workwise/js/jquery.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('static/workwise/js/popper.js')}}"></script>
 <script type="text/javascript" src="{{asset('static/workwise/js/bootstrap.min.js')}}"></script>

@@ -1,8 +1,6 @@
 
 <!DOCTYPE html>
 <html>
-
-<!-- Mirrored from gambolthemes.net/workwise-new/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Feb 2020 04:00:54 GMT -->
 <head>
     <meta charset="UTF-8">
     <title>WorkWise Html Template</title>
@@ -311,5 +309,11 @@
 <script type="text/javascript" src="{{asset('static/workwise/lib/slick/slick.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('static/workwise/js/scrollbar.js')}}"></script>
 <script type="text/javascript" src="{{asset('static/workwise/js/script.js')}}"></script>
+
+<script>
+        document.addEventListener("contextmenu", function(e){
+            e.preventDefault();
+        }, false);
+</script>
 </body>
 </html>
