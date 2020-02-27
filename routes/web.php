@@ -13,10 +13,13 @@
 Route::get('/', 'users\LoginSignupController@index');
 Route::get('/login', 'users\LoginSignupController@index')->name('login');
 
+Route::post('/validateLogin', 'users\LoginSignupController@validateLogin');
 Route::post('/signup', 'users\LoginSignupController@signup');
 
 Route::get('/logout', 'users\LoginSignupController@logout')->name('logout');
-Route::get('/home', 'users\HomeController@index')->name('home');
+
+Route::get('/home', 'users\HomeController@index')->name('home')->middleware('auth');
+Route::get('/profile-feed', 'users\ProfileController@index')->name('profile')->middleware('auth');
 
 
 

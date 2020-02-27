@@ -13,7 +13,7 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="index-2.html" title="">
+                        <a href="{{route('home')}}" title="">
                             <span><img src="{{asset('static/workwise/images/icon1.png')}}" alt=""></span>
                             Home
                         </a>
@@ -183,15 +183,11 @@
                             </div>
                         </li>
                     </ul>
-                    <h3>Custom Status</h3>
-                    <div class="search_form">
-                        <form>
-                            <input type="text" name="search">
-                            <button type="submit">Ok</button>
-                        </form>
-                    </div><!--search_form end-->
+
                     <h3>Setting</h3>
                     <ul class="us-links">
+
+                        <li><a href="{{route('profile')}}" title="Profile">Profile</a></li>
                         <li><a href="profile-account-setting.html" title="">Account Setting</a></li>
                         <li><a href="#" title="">Privacy</a></li>
                         <li><a href="#" title="">Faqs</a></li>

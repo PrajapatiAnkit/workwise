@@ -51,29 +51,25 @@
                             <div class="sign_in_sec current" id="tab-1">
 
                                 <h3>Sign in</h3>
-                                <form>
+                                <div class="alert alert-danger2" id="errorMessages2" style="display: none;font-size: 12px;"></div>
+                                <form id="loginForm">
                                     <div class="row">
                                         <div class="col-lg-12 no-pdd">
                                             <div class="sn-field">
-                                                <input type="text" name="username" placeholder="Username">
+                                                <input type="text" name="username" id="username" placeholder="Username">
                                                 <i class="la la-user"></i>
+                                                <div class="empty-field" id="usernameError">usernameError</div>
                                             </div><!--sn-field end-->
                                         </div>
                                         <div class="col-lg-12 no-pdd">
                                             <div class="sn-field">
-                                                <input type="password" name="password" placeholder="Password">
+                                                <input type="password" name="password" id="password" placeholder="Password">
                                                 <i class="la la-lock"></i>
+                                                <div class="empty-field" id="passwordError">passwordError</div>
                                             </div>
                                         </div>
                                         <div class="col-lg-12 no-pdd">
                                             <div class="checky-sec">
-                                                <div class="fgt-sec">
-                                                    <input type="checkbox" name="cc" id="c1">
-                                                    <label for="c1">
-                                                        <span></span>
-                                                    </label>
-                                                    <small>Remember me</small>
-                                                </div><!--fgt-sec end-->
                                                 <a href="#" title="">Forgot Password?</a>
                                             </div>
                                         </div>
@@ -102,9 +98,8 @@
                                 </div><!--signup-tab end-->  --}}
 
                                 <div class="dff-tab current" id="tab-3">
-                                    <div class="alert alert-danger2" id="errorMessages" style="display: none"></div>
+                                    <div class="alert alert-danger2" id="errorMessages" style="display: none;font-size: 12px;"></div>
                                     <form id="signupForm">
-                                        @csrf
                                         <div class="row">
                                             <div class="col-lg-12 no-pdd">
                                                 <div class="sn-field">
@@ -219,7 +214,7 @@
 
         <div class="modal-busy" id="loader" style="display: none">
             <div class="center-busy">
-                <img src="{{asset('assets/images/loader/loader-icon.gif')}}">
+                <img src="{{asset('assets/images/loader/loader-circle.gif')}}">
             </div>
         </div>
         <div class="footy-sec">
